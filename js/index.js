@@ -3,6 +3,16 @@
 // js 를 실행하여야 정상적인 처리가 가능하다.
 
 window.onload = function () {
+  // 모달창 기능
+  let modalWrap = document.querySelector(".modal-wrap");
+  let modalClose = document.querySelector(".modal-close");
+  modalClose.addEventListener("click", function () {
+    modalWrap.classList.add("fadeOut");
+    modalWrap.addEventListener("animationend", () => {
+      modalWrap.style.display = "none";
+    });
+  });
+
   // 위로 이동하기
   // .gotop 을 js에 저장하자.
   const goTop = document.querySelector(".gotop");
